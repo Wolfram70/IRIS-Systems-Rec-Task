@@ -1,17 +1,14 @@
-
 version: '3.8'
 
 services:
   employee-app:
-    context: .
-    build: .
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
     volumes:
       - .:/app:rw
     environment:
-      DB_USER: root
-      DB_PASSWORD: password
-      DB_NAME: employee
-      DB_HOST: employee-db
+    DB_HOST: employee-db
     depends_on:
       - employee-db
     ports:
@@ -22,3 +19,14 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: employee
+
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/web/Dockerfile
+    depends_on:
+      - employee-app
+    ports:
+      - 8080:8090
+    restart:
+      always
