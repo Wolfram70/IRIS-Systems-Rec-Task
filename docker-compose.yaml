@@ -46,7 +46,7 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: employee
     volumes:
-      - ./dbdata:/var/lib/mysql
+      - ./dbdata:/var/lib/mysql:rw
   
   web:
     build:
@@ -58,5 +58,17 @@ services:
       - employee-app-serv3
     ports:
       - 8080:5000
+    restart:
+      always
+  
+  backup:
+    build:
+      context: .
+      dockerfile: ./docker/backup_daemon/Dockerfile
+    depends_on:
+      - employee-db
+    volumes:
+      - ./dbdata:/data/:ro
+      - ./backup:/backup/
     restart:
       always
