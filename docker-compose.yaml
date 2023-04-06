@@ -3,8 +3,9 @@ version: '3.8'
 
 services:
   employee-app:
-    context: .
-    build: .
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
     volumes:
       - .:/app:rw
     environment:
