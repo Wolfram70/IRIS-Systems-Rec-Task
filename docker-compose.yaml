@@ -8,11 +8,12 @@ services:
     volumes:
       - .:/app:rw
     environment:
-    DB_HOST: employee-db
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_NAME: employee
+      DB_HOST: employee-db
     depends_on:
       - employee-db
-    ports:
-      - 8080:3000
 
   employee-db:
     image: mysql:5.7
