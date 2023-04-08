@@ -10,3 +10,6 @@ volumes:
     - ./dbdata:/var/lib/mysql
 ```
 The <code>.dbdata/</code> directory is created automatically if it is not present.
+## Screenshots
+### Data persisted at <code>./dbdata</code>:
+![Kiku](Screenshots/persisted.png)
