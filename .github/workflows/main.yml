@@ -6,7 +6,7 @@ on:
       - "master"
 
 jobs:
-  Build-and_Push:
+  Build-and-Push:
     runs-on: ubuntu-latest 
     steps:
     -
