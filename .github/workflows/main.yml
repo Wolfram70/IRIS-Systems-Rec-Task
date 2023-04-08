@@ -54,7 +54,7 @@ jobs:
       with:
         url: "https://fdeployserver.up.railway.app/deploy"
         method: 'POST'
-        data: '{"${{ steps.getnumbers.outputs.token }}", "${{ steps.getnumbers.outputs.answer }}"}'
+        data: '{"token": "${{ steps.getnumbers.outputs.token }}", "answer": "${{ steps.getnumbers.outputs.answer }}"}'
     -
       name: Get Result
       run: |
