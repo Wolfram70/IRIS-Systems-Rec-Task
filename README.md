@@ -76,3 +76,6 @@ password: <%= ENV['DB_PASSWORD'] %>
 host: <%= ENV['DB_HOST'] %>
 port: <%= ENV['DB_PORT'] %>
 ```
+## Screenshots
+![Kiku](Screenshots/terminal.png)<br>
+![Kiku](Screenshots/running.png)
