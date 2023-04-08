@@ -17,3 +17,8 @@ location / {
     ...
 }
 ```
+## Screenshots
+### The application accessed at <code>localhost:8080</code>:
+![Kiku](Screenshots/running.png)<br><br>
+Setting the rate limit to 1 request per second and reloading the website within a second causes the reverse proxy to block the request:<br><br>
+![Kiku](Screenshots/toofast.png)
