@@ -51,3 +51,9 @@ Port <code>5000</code> of the container is exposed at port <code>8080</code> of 
 ports:
     - 8080:5000
 ```
+## Screenshots
+### All the containers running:
+![Kiku](Screenshots/containers_running.png)
+### Load balancing:
+Here it can be seen that <code>serv-2</code> is getting more requests than other servers since its weight was adjusted to be the greatest.<br>
+![Kiku](Screenshots/load_balanced.png)
