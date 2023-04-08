@@ -66,3 +66,8 @@ Lastly, the container is set to always restart in the event that it stops at any
 restart:
     always
 ```
+## Screenshots
+### The three containers running:
+![Kiku](Screenshots/terminal.png)
+### The application accessed at <code>localhost:8080</code>:
+![Kiku](Screenshots/running.png)
