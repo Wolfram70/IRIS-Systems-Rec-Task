@@ -42,6 +42,5 @@ jobs:
       id: getnumbers
       run: |
         token = ${{fromJson(steps.challenge.outputs.response).token}}
-        echo $token
-      
+        echo "$token"
       
