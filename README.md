@@ -77,7 +77,7 @@ run: make push
 Now, whenever there is a push to the master branch, the images are automatically built and pushed to dockerhub.
 
 ### Screenshot
-This is a screenshot of the job successfully running:
+This is a screenshot of the job successfully running:<br>
 ![Kiku](Screenshots/job1.png)
 
 ## Fake-Deploy
@@ -128,5 +128,5 @@ run: |
     echo ${{ steps.deploy.outputs.response }}
 ```
 ### Screenshot
-This is a screenshot of the job successfully running and getting an <code>OK</code> response from the server:
+This is a screenshot of the job successfully running and getting an <code>OK</code> response from the server:<br>
 ![Kiku](Screenshots/job2.png)
