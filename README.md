@@ -61,3 +61,9 @@ while True:
     time.sleep(30)
 ```
 This ensures that timely backups are taken everyday at <code>1:00 AM</code> and saved under the appropriate name and folder on the host machine.
+## Screenshots
+For the following screenshots, the backup frequency was increased to one every minute to show its working.
+### The backup daemon container running:
+![Kiku](Screenshots/terminal.png)
+### The backups taken:
+![Kiku](Screenshots/backup.png)
