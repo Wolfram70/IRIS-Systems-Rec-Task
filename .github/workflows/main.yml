@@ -40,7 +40,22 @@ jobs:
     -
       name: Get and add numbers
       id: getnumbers
+      env:
+        NUM1: ${{ fromJson(steps.challenge.outputs.response).num1 }}
+        NUM2: ${{ fromJson(steps.challenge.outputs.response).num2 }}
+        token: ${{ fromJson(steps.challenge.outputs.response).token }}
       run: |
-        token = ${{fromJson(steps.challenge.outputs.response).token}}
-        echo "$token"
-      
+        echo "token=$token" >> $GITHUB_OUTPUT
+        echo "answer=$(($NUM1 + $NUM2))" >> $GITHUB_OUTPUT
+    -
+      name: Deploy
+      id: deploy
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: "https://fdeployserver.up.railway.app/deploy"
+        method: 'POST'
+        data: '{"token": $${{ steps.getnumbers.outputs.token }}, "answer": $${{ steps.getnumbers.outputs.answer }}'
+    -
+      name: Get Result
+      run: |
+        echo ${{ steps.deploy.outputs.response }}
