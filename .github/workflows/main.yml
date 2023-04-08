@@ -29,7 +29,6 @@ jobs:
       run: make push
   Fake-Deploy:
     runs-on: ubuntu-latest
-    env:
     steps:
     -
       name: Challenge
