@@ -77,5 +77,7 @@ host: <%= ENV['DB_HOST'] %>
 port: <%= ENV['DB_PORT'] %>
 ```
 ## Screenshots
+The containers running:<br>
 ![Kiku](Screenshots/terminal.png)<br>
+The application accessed at <code>localhost:8080</code><br>
 ![Kiku](Screenshots/running.png)
