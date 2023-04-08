@@ -6,8 +6,8 @@ on:
       - "master"
 
 jobs:
-  build_and_push:
-    runs-on: ubuntu-latest
+  Build-and_Push:
+    runs-on: ubuntu-latest 
     steps:
     -
       name: Checkout
@@ -27,3 +27,22 @@ jobs:
     -
       name: Push images
       run: make push
+  Fake-Deploy:
+    runs-on: ubuntu-latest
+    env:
+    steps:
+    -
+      name: Challenge
+      id: challenge
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: "https://fdeployserver.up.railway.app/challenge"
+        method: 'GET'
+    -
+      name: Get and add numbers
+      id: getnumbers
+      run: |
+        token = ${{fromJson(steps.challenge.outputs.response).token}}
+        echo $token
+      
+      
