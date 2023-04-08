@@ -1,4 +1,4 @@
-# IRIS-Systems-Rec-Task
+# IRIS Systems Recruitment Task
 This is the repository for the IRIS Systems Recruitment Task. Each task has its own branch and README file explaining the method used and all the steps taken to achieve it in further detail.<br>
 The tasks involved are:
 ## 1. Dockerizing the rails application
